@@ -8,7 +8,7 @@ var tableData = data;
 var tbody = d3.select("tbody");
 
 // prints all of the information in the browser
-data.forEach(function(ufoSightings){
+ data.forEach(function(ufoSightings){
     console.log(ufoSightings);
     var row=tbody.append("tr");
 
@@ -25,10 +25,12 @@ button.on("click", function() {
     d3.event.preventDefault();
     // Select the input element and get the raw HTML node
 var inputElement = d3.select("#datetime");
+// var inputElement = d3.select("#city");
 // Get the value property of the input element
+
 var inputValue = inputElement.property("value");
     console.log(inputValue);
-
+    // if (inputValue== "datetime"){
 //   data.forEach(function())
  var filteredData = tableData.filter(row => row.datetime === inputValue);
   
@@ -42,11 +44,39 @@ filteredData.forEach(function(ufoSitings){
     var row=tbody.append("tr");
 
     Object.entries(ufoSitings).forEach(function([key, value]){
+    //     if (key === "datetime") {
+    //         datetime.push(value);
+    //       }
+    //       else {
+    //         city.push(value);
+    //       }
+    //      });
+    //   });
         console.log(key,value);
         var cell = tbody.append("td");
         cell.text(value);
     });
 });
 
+// };
 });
 
+// create empty arrays for each key in the UFO data
+
+// var datetime =[];
+// var city =[];
+// var state =[];
+// var shape =[];
+
+// // iterate through each key and value
+
+// // Create a custom filtering function
+// function selectCity(name) {
+//     return name.city == inputValue;
+//   }
+  
+// filter() uses the custom function as its argument
+//   var city = tableData.filter(city);
+  
+//   // Test
+//   console.log(city);
